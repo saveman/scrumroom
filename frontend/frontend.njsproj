@@ -25,25 +25,12 @@
     <Content Include="public\logo512.png" />
     <Content Include="public\favicon.ico" />
     <Content Include="public\manifest.json" />
-    <Content Include="src\App.css" />
-    <Content Include="src\index.css" />
-    <Content Include="src\logo.svg" />
-    <Content Include="src\App.js" />
-    <Content Include="src\App.test.js" />
     <Content Include="src\index.js" />
     <Content Include="src\serviceWorker.js" />
-    <Content Include="src\setupTests.js" />
-    <Content Include="src\app\store.js" />
-    <Content Include="src\features\counter\Counter.module.css" />
-    <Content Include="src\features\counter\Counter.js" />
-    <Content Include="src\features\counter\counterSlice.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="public" />
     <Folder Include="src" />
-    <Folder Include="src\app" />
-    <Folder Include="src\features" />
-    <Folder Include="src\features\counter" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
