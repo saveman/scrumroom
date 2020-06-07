@@ -1,0 +1,6 @@
+@media (min-width: 768px) {
+    .room-select-modal {
+        width: 40%;
+        max-width: none !important;
+    }
+}

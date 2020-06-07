@@ -1,0 +1,6 @@
+@media (min-width: 768px) {
+    .login-modal {
+        width: 40%;
+        max-width: none !important;
+    }
+}

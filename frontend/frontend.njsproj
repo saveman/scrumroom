@@ -26,11 +26,44 @@
     <Content Include="public\favicon.ico" />
     <Content Include="public\manifest.json" />
     <Content Include="src\index.js" />
+    <Content Include="src\model\store.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\model\userInfo.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="src\serviceWorker.js" />
+    <Content Include="src\view\App.css">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\view\App.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\view\FormUtils.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\view\Room.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\view\RoomSelectModal.css" />
+    <Content Include="src\view\LoginModal.css">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\view\LoginModal.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\view\RoomSelectModal.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\view\TopNavbar.js">
+      <SubType>Code</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="public" />
     <Folder Include="src" />
+    <Folder Include="src\view\" />
+    <Folder Include="src\model\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />

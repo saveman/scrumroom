@@ -1,17 +1,26 @@
+import 'react-app-polyfill/ie11';
+import 'react-app-polyfill/stable';
+import 'es6-promise/auto'
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import store from './app/store';
 import { Provider } from 'react-redux';
+import { ConnectedRouter } from 'connected-react-router';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import * as serviceWorker from './serviceWorker';
+import { history, store } from './model/store';
+import { App } from './view/App';
 
 ReactDOM.render(
-    <React.StrictMode>
-        <Provider store={store}>
+    //    <React.StrictMode>
+    <Provider store={store}>
+        <ConnectedRouter history={history}> { /* place ConnectedRouter under Provider */}
             <App />
-        </Provider>
-    </React.StrictMode>,
+        </ConnectedRouter>
+    </Provider>
+    //    </React.StrictMode >
+    ,
     document.getElementById('root')
 );
 

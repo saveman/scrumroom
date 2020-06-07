@@ -18,6 +18,12 @@
   <ItemGroup>
     <Content Include="package-lock.json" />
     <Content Include="package.json" />
+    <Content Include="src\api.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\model.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="src\server.js" />
   </ItemGroup>
   <ItemGroup>

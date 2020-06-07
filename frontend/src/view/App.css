@@ -1,0 +1,9 @@
+body {
+    background-color: #ffdddd;
+}
+
+.mainContainer {
+    background-color: #ddddff;
+    min-height: 100vh;
+    margin: 0 auto;
+}
