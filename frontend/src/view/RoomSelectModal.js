@@ -1,12 +1,11 @@
 import React from 'react'
-import { useDispatch } from 'react-redux';
+//import { useDispatch } from 'react-redux';
 import { Modal, Button, Form } from 'react-bootstrap';
 import { Formik } from 'formik';
 import { PropTypes } from 'prop-types';
 import * as Yup from 'yup';
 import { Link, useHistory } from 'react-router-dom';
 
-import { loginUser } from '../model/userInfo';
 import { FormTextField } from './FormUtils';
 
 import './RoomSelectModal.css';
@@ -19,7 +18,7 @@ const RoomSelectModalSchema = Yup.object().shape({
 });
 
 export const RoomSelectModal = () => {
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
     const history = useHistory();
     // const userInfo = useSelector(selectUserInfo);
 
@@ -38,8 +37,9 @@ export const RoomSelectModal = () => {
                 (values, formikBag) => {
                     formikBag.setSubmitting(true)
                     onConfirm(values)
-                    formikBag.resetForm();
-                    formikBag.setSubmitting(false)
+                    // confirm redirects to other page, so component is no longer here
+                    // formikBag.resetForm();
+                    // formikBag.setSubmitting(false)
                 }
             }
         >

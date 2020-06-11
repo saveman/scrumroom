@@ -5,6 +5,7 @@ import { createBrowserHistory } from 'history';
 import { routerMiddleware } from 'connected-react-router';
 
 import { userInfoReducer } from './userInfo';
+import { roomReducer } from "./room";
 
 const loggerMiddleware = createLogger();
 
@@ -13,7 +14,8 @@ const history = createBrowserHistory();
 const store = configureStore({
     reducer: {
         router: connectRouter(history),
-        userInfo: userInfoReducer
+        userInfo: userInfoReducer,
+        room: roomReducer
     },
     middleware: [...getDefaultMiddleware(), routerMiddleware(history), loggerMiddleware]
 });

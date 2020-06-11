@@ -1,0 +1,9 @@
+.card-columns {
+    column-count: 3;
+}
+
+@media (min-width: 1000px) {
+    .card-columns {
+        column-count: 6;
+    }
+}

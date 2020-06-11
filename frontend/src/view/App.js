@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
-import { Button, Container } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 
 import { selectUserInfo } from '../model/userInfo';
 import { TopNavbar } from './TopNavbar';
