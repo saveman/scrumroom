@@ -1,5 +1,8 @@
 .vs/
 bin/
 obj/
+build/
 node_modules/
 *.njsproj.user
+*-private.sh
+

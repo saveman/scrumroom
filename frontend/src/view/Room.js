@@ -11,9 +11,12 @@ import './Room.css'
 import { faHourglassHalf, faCheck, faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const ENDPOINT = "http://localhost:3001/";
-
-const socket = io(ENDPOINT);
+let socket = null;
+if (process.env.NODE_ENV === 'development') {
+    socket = io("http://localhost:3001/");
+} else {
+    socket = io();
+}
 
 export const RoomUser = ({ user, state }) => {
 

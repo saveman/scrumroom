@@ -1,0 +1,28 @@
+{
+  "name": "scrumroom",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "start_backend": "cd backend && npm start",
+    "start_frontend": "cd frontend && npm start",
+    "dev": "concurrently \"npm run start_backend\" \"npm run start_frontend\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saveman/scrumroom.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saveman/scrumroom/issues"
+  },
+  "homepage": "https://github.com/saveman/scrumroom#readme",
+  "devDependencies": {
+    "concurrently": "^5.2.0"
+  },
+  "engines": {
+    "node": ">=10.14.0"
+  }
+}

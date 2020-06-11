@@ -3,9 +3,8 @@ const cors = require('cors')
 const app = express()
 const http = require('http');
 const io = require('socket.io');
-
-const { createModel } = require('./model');
-const { setupApi } = require('./api');
+const fs = require("fs");
+const path = require('path');
 
 app.use(cors())
 
@@ -13,33 +12,17 @@ const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-const model = createModel();
-
-setupApi(app, model, '/api');
-
-const sendResponse = (res, result) => {
-    console.log('SENDRESPONSE', result);
-    if (result.code) {
-        res.status(result.code);
-    }
-    if (result.response) {
-        res.json(result.response);
-    }
-};
-
-app.get('/', function (req, res, next) {
-    res.send('Hello World!')
-})
-
-app.get("/api/topics", (req, res, next) => {
-    //    getTopics((response) => sendResponse(res, response));
-});
-app.post("/api/topics", (req, res, next) => {
-    //    addTopic(req.body, (response) => sendResponse(res, response));
-});
-app.delete("/api/topics/:id", (req, res, next) => {
-    //    removeTopic(req.params.id, (response) => sendResponse(res, response));
-});
+const staticContentPath = path.resolve(__dirname, '..', 'static')
+if (fs.existsSync(staticContentPath)) {
+    app.use('/', express.static(staticContentPath));
+    app.use('*', function (req, res) {
+        res.sendFile(path.resolve(staticContentPath, 'index.html'));
+    });
+} else {
+    app.get('/', function (req, res, next) {
+        res.send('Hello World!')
+    })
+}
 
 const server = http.createServer(app);
 const sockio = io(server);
