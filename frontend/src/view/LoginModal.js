@@ -41,7 +41,7 @@ export const LoginModal = () => {
             }
         >
             {(props) => (
-                <Modal show={!userInfo.isLogged} scrollable={true} size='xl' backdrop={false}
+                <Modal show={!userInfo.isLogged} scrollable={true} size='lg' backdrop={false}
                     centered={true} dialogClassName="login-modal" >
                     <Form onSubmit={props.handleSubmit} noValidate>
                         <Modal.Header>

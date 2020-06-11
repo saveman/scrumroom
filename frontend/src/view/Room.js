@@ -7,7 +7,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { selectUserInfo } from '../model/userInfo';
 import { updateRoomState, selectRoomState } from '../model/room';
 
-import './Room.css'
 import { faHourglassHalf, faCheck, faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -21,18 +20,20 @@ if (process.env.NODE_ENV === 'development') {
 export const RoomUser = ({ user, state }) => {
 
     return (
-        <Card bg="light" border="dark">
-            <Card.Header>
-                <Card.Title className="text-center">{user.name}</Card.Title>
-            </Card.Header>
-            <Card.Body>
-                <Card.Text className="text-center">
-                    {state === 'default' && (<FontAwesomeIcon size="2x" icon={faUser} color="black" />)}
-                    {state === 'pending' && (<FontAwesomeIcon size="2x" icon={faHourglassHalf} color="goldenrod" />)}
-                    {state === 'ready' && (<FontAwesomeIcon size="2x" icon={faCheck} color="green" />)}
-                </Card.Text>
-            </Card.Body>
-        </Card>
+        <Col xs="4" md="3" xl="2" className="my-auto">
+            <Card bg="light" border="dark">
+                <Card.Header>
+                    <Card.Title className="text-center">{user.name}</Card.Title>
+                </Card.Header>
+                <Card.Body>
+                    <Card.Text className="text-center">
+                        {state === 'default' && (<FontAwesomeIcon size="2x" icon={faUser} color="black" />)}
+                        {state === 'pending' && (<FontAwesomeIcon size="2x" icon={faHourglassHalf} color="goldenrod" />)}
+                        {state === 'ready' && (<FontAwesomeIcon size="2x" icon={faCheck} color="green" />)}
+                    </Card.Text>
+                </Card.Body>
+            </Card>
+        </Col>
     );
 };
 
@@ -52,13 +53,15 @@ export const RoomUsers = () => {
     }
 
     return (
-        <CardColumns className="p-2 bg-secondary user-columns">
-            {
-                roomState && roomState.users && roomState.users.map((user) => {
-                    return (<RoomUser key={'user' + user.id} user={user} state={getUserState(user)} />);
-                })
-            }
-        </CardColumns>
+        <Container className="bg-secondary">
+            <Row className="py-2">
+                {
+                    roomState && roomState.users && roomState.users.map((user) => {
+                        return (<RoomUser key={'user' + user.id} user={user} state={getUserState(user)} />);
+                    })
+                }
+            </Row>
+        </Container>
     );
 };
 
@@ -114,7 +117,7 @@ export const RoomRunningVoting = () => {
                     {
                         votes.map((vote) => {
                             return (
-                                <Col key={vote} sm={3} md={2} lg={1} >
+                                <Col key={vote} xs={4} sm={3} md={2} lg={1} >
                                     <Button className="my-1" block variant={getButtonVariant(vote)} onClick={() => onVoteClick(vote)}>{vote}</Button>
                                 </Col>
                             )
