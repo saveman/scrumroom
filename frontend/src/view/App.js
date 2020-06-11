@@ -7,7 +7,7 @@ import { TopNavbar } from './TopNavbar';
 import { LoginModal } from './LoginModal';
 
 import './App.css';
-import { Switch, Route } from 'react-router';
+import { Switch, Route, Redirect } from 'react-router';
 import { RoomSelectModal } from './RoomSelectModal';
 import { Room } from './Room';
 
@@ -24,6 +24,7 @@ export const App = () => {
                     <Switch>
                         <Route exact path="/" component={RoomSelectModal} />
                         <Route path="/rooms/:room" component={Room} />
+                        <Redirect to="/" />
                     </Switch>
                 )
             }

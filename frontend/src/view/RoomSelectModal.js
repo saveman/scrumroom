@@ -56,7 +56,6 @@ export const RoomSelectModal = () => {
                         </Modal.Body>
                         <Modal.Footer>
                             <Button variant="primary" type="submit" disabled={props.isSubmitting}>Submit</Button>
-                            <Link to="/about">About</Link>
                         </Modal.Footer>
                     </Form>
                 </Modal>
