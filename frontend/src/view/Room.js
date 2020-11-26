@@ -129,11 +129,11 @@ export const RoomRunningVoting = () => {
     );
 }
 
-export const RoomVotingResultsRow = ({ result }) => {
+export const RoomVotingResultsRow = ({ result, index }) => {
     return (
         <Row>
             <Col xs="8" className="my-auto">
-                <ProgressBar className="m-1" now={result.now} max={result.max}
+                <ProgressBar className="m-1" variant={ index % 2 == 0 ? 'success' : 'info'} now={result.now} max={result.max}
                     label={result.now.toString() + ' / ' + result.total.toString()} />
             </Col>
             <Col xs="2" className="my-auto">
@@ -144,7 +144,7 @@ export const RoomVotingResultsRow = ({ result }) => {
                     result.users.map((user) => {
                         return (
                             <div key={user.id}>
-                                <Badge variant="success">{user.name}</Badge>{' '}
+                                <Badge variant={ index % 2 == 0 ? 'success' : 'info'}>{user.name}</Badge>{' '}
                             </div>
                         )
                     })
@@ -223,9 +223,9 @@ export const RoomVotingResults = ({ sortByCount }) => {
     return (
         <Container className="p-2 bg-dark text-light">
             {
-                calculateResults().map((result) => {
+                calculateResults().map((result, index) => {
                     return (
-                        <RoomVotingResultsRow key={result.id} result={result} />
+                        <RoomVotingResultsRow key={result.id} result={result} index={index} />
                     )
                 })
             }
